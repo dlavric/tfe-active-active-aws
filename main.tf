@@ -514,7 +514,7 @@ resource "aws_launch_configuration" "as_conf_tfe_single" {
   }
 
 
-  user_data = templatefile("${path.module}/scripts/user-data-single.sh", {
+  user_data = templatefile("${path.module}/tf-script/user-data-single.sh", {
     tag_prefix         = var.tag_prefix
     certificate_email  = var.certificate_email
     filename_airgap    = var.filename_airgap
@@ -582,7 +582,7 @@ resource "aws_launch_configuration" "as_conf_tfe_active" {
   }
 
 
-  user_data = templatefile("${path.module}/scripts/user-data-active-active.sh", {
+  user_data = templatefile("${path.module}/tf-script/user-data-active-active.sh", {
     tag_prefix         = var.tag_prefix
     filename_airgap    = var.filename_airgap
     filename_license   = var.filename_license
