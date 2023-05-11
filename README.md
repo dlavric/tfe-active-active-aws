@@ -9,7 +9,7 @@ This repository is installing Terraform Enterprise Active/Active on AWS.
 
 We will be using RDS PostgreSQL and a S3 Bucket on AWS. 
 
-An autoscaling group is also used to scale the nodes
+An autoscaling group is used to scale the nodes.
 
 
 ### Prerequisites
