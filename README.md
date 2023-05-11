@@ -59,7 +59,7 @@ cd files
 - Create a terraform file with your own variables `variables.auto.tfvars`:
 ```terraform
 tag_prefix               = "daniela-tfe"                              # TAG prefix for names to easily find your AWS resources
-region                   = "eu-west-2"                                # Region to create the environment
+region                   = "eu-west-1"                                # Region to create the environment
 vpc_cidr                 = "10.234.0.0/16"                            # subnet mask that can be used 
 ami                      = "ami-05147510eb2885c80"                    # AMI of the Ubuntu image  
 rds_password             = "Password#1"                               # password used for the RDS environment
@@ -67,9 +67,9 @@ filename_airgap          = "692.airgap"                               # filename
 filename_license         = "license.rli"                              # filename of your TFE license stored under ./airgap
 filename_bootstrap       = "replicated.tar.gz"                        # filename of the bootstrap installer stored under ./airgap
 dns_hostname             = "daniela-tfe"                              # DNS hostname for the TFE
-dns_zonename             = "tf-support.hashicorpdemo.com"             # DNS zone name to be used
+dns_zonename             = "tf-support.hashicorpdemo.com"                 # DNS zone name to be used
 tfe_password             = "Password#1"                               # TFE password for the dashboard and encryption of the data
-certificate_email        = "<your-email>@hashicorp.com"              # Your email address used by TLS certificate registration
+certificate_email        = "<your-email>@hashicorp.com"               # Your email address used by TLS certificate registration
 terraform_client_version = "1.1.7"                                    # Terraform version you want to have installed on the client machine
 public_key               = "ssh-rsa AAAAB3Nza"                        # The public key for you to connect to the server over SSH
 asg_min_size             = 1                                          # autoscaling group minimal size. Currently 1 is the only option
