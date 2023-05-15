@@ -1,0 +1,4 @@
+files*
+variables.auto.tfvars
+.terraform*
+terraform*
