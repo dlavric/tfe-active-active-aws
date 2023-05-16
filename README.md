@@ -285,6 +285,11 @@ $ replicatedctl app status
 This can be done from the UI, by connecting to the application:
 https://daniela-tfe.tf-support.hashicorpdemo.com
 
+- When you finished, destroy everything:
+```shell
+terraform destroy
 
+Destroy complete! Resources: 48 destroyed.
+```
 
 
