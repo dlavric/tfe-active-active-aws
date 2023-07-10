@@ -381,7 +381,7 @@ resource "aws_lb_target_group" "lb_target_group2" {
     healthy_threshold   = 2
     protocol            = "HTTPS"
     timeout             = 20
-    unhealthy_threshold = 2
+    unhealthy_threshold = 5
     path                = "/_health_check"
   }
 }

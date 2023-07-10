@@ -115,7 +115,7 @@ The script is going to create
 ```shell
 ssh -J ubuntu@daniela-tfe-client.tf-support.hashicorpdemo.com ubuntu@<your-private-ip-address-of-the-asg-instance>
 
-ssh -J ubuntu@daniela-tfe-client.tf-support.hashicorpdemo.com ubuntu@10.234.11.26 bash /tmp/tfe_setup.sh
+ssh -J ubuntu@daniela-tfe-client.tf-support.hashicorpdemo.com ubuntu@10.234.11.81 bash /tmp/tfe_setup.sh
 ```
 
 - If you cannot login to the server through ssh and you get the following message remove 
@@ -293,3 +293,15 @@ Destroy complete! Resources: 48 destroyed.
 ```
 
 
+**Additional changes**
+
+The script `user-data-single.sh` has now a piece of code where the `fstab` of the OS can be modified to have the `noexec` flag
+on the `/tmp` mount point:
+```shell
+grep /tmp /etc/fstab || {
+         echo 'tmpfs                   /tmp                    tmpfs   size=512m,noexec       0 0' | tee -a /etc/fstab
+         mountpoint /tmp || mount /tmp
+ }
+ ```
+
+ This piece of code can be uncommented if we want to test the installation of TFE when the `fstab` has the `noexec` flag setup.  
